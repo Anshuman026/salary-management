@@ -24,15 +24,23 @@ TO RUN THE CODE PLEASE FOLLOW THESE STEPS
 
 ### Backend
 cd backend
+
 npm install
+
 npx prisma generate
+
 npx prisma migrate dev
+
 node seed.js
+
 npx nodemon index.js
 
 ### Frontend
+
 cd frontend
+
 npm install
+
 npm run dev
 
 ## Seed Data
