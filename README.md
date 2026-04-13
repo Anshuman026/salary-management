@@ -18,6 +18,8 @@ A full-stack application to manage employees and analyze salary insights for 10,
 ##  Architecture
 Frontend → Backend API → Database
 
+TO RUN THE CODE PLEASE FOLLOW THESE STEPS 
+
 ##  Setup Instructions
 
 ### Backend
