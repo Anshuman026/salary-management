@@ -83,4 +83,8 @@ app.get("/insights/job", async (req, res) => {
   res.json(stats);
 });
 
-app.listen(5000, () => console.log("Backend running on 5000"));
+if (process.env.NODE_ENV !== "test") {
+  app.listen(5000, () => console.log("Backend running on 5000"));
+}
+
+module.exports = app;
