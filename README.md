@@ -1,38 +1,64 @@
-# Salary Management System
+ Salary Management System
 
-## Overview
-A full-stack application to manage employees and analyze salary insights for 10,000 employees.
+##  Overview
+
+A full-stack web application to manage employees and analyze salary insights for an organization with 10,000 employees.
+
+This project is designed with a focus on **scalability, performance, and clean architecture**, simulating a real-world production system.
+
+---
 
 ## Tech Stack
-- Backend: Node.js, Express, Prisma
-- Frontend: Next.js (App Router)
-- Database: SQLite
+
+* **Frontend**: Next.js (App Router)
+* **Backend**: Node.js, Express
+* **Database**: SQLite (Prisma ORM)
+* **Testing**: Jest + Supertest
+
+---
 
 ##  Features
-- Employee CRUD
-- Pagination (server-side)
-- Search & Filter (country, job)
-- Salary insights
-- 10,000 employee seed script
+
+###  Employee Management
+
+* View employees
+* Server-side pagination (handles 10,000 records efficiently)
+* Search employees by name
+* Filter by country and job title
+
+###  Salary Insights
+
+* Minimum, maximum, and average salary per country
+* Average salary by job title within a country
+
+###  Performance Optimizations
+
+* Server-side pagination for large datasets
+* Backend filtering to reduce frontend load
+* Efficient database queries using Prisma ORM
+
+---
 
 ##  Architecture
-Frontend → Backend API → Database
+
+Frontend (Next.js) → Backend API (Express) → Database (SQLite)
+
+---
 
 ##  How to Run the Project
 
-Follow these steps to run the application locally using VS Code:
-
----
-
 ###  1. Clone the Repository
 
-git clone <your-repo-url>
-cd salary-app
+```bash
+git clone https://github.com/Anshuman026/salary-management.git
+cd salary-management
+```
 
 ---
 
-###  2. Setup Backend
+###  2. Backend Setup
 
+```bash
 cd backend
 
 # Install dependencies
@@ -49,16 +75,21 @@ node seed.js
 
 # Start backend server
 npx nodemon index.js
+```
 
-Backend will run on:
+Backend runs on:
+
+```
 http://localhost:5000
+```
 
 ---
 
-###  3. Setup Frontend
+###  3. Frontend Setup
 
 Open a new terminal:
 
+```bash
 cd frontend
 
 # Install dependencies
@@ -66,42 +97,116 @@ npm install
 
 # Start frontend
 npm run dev
+```
 
-Frontend will run on:
+Frontend runs on:
+
+```
 http://localhost:3000
+```
 
 ---
 
 ###  4. Verify Application
 
-Open browser and go to:
+Open in browser:
+
+```
 http://localhost:3000
+```
 
 You should see:
-- Employee Dashboard
-- Pagination working
-- Search and filters working
+
+* Employee Dashboard
+* Pagination working
+* Search and filters working
 
 ---
 
-###  Notes
+##  Running Tests
 
-- Make sure backend is running before starting frontend
-- If data is not visible, ensure seed script has been executed
-- Backend runs on port 5000 and frontend on port 3000
+```bash
+cd backend
+npm test
+```
+
+✔ Includes:
+
+* Employee API tests
+* Pagination validation
+* Search & filter testing
 
 ---
 
-## API Endpoints
-GET /employees
-GET /insights/country/:country
+##  Seed Data
+
+To generate 10,000 employees:
+
+```bash
+node seed.js
+```
+
+---
+
+##  API Endpoints
+
+| Method | Endpoint                   | Description               |
+| ------ | -------------------------- | ------------------------- |
+| GET    | /employees                 | Get employees (paginated) |
+| GET    | /employees?search=         | Search employees          |
+| GET    | /employees?country=        | Filter by country         |
+| GET    | /employees?job=            | Filter by job             |
+| GET    | /insights/country/:country | Salary insights           |
+
+---
 
 ##  Design Decisions
-- Used pagination for performance
-- Server-side filtering for scalability
-- Prisma ORM for maintainability
 
-## Future Improvements
-- Authentication
-- Charts dashboard
-- Deployment (AWS/Vercel)
+* Implemented **server-side pagination** to efficiently handle large datasets
+* Used **backend filtering and search** for scalability
+* Chose **Prisma ORM** for maintainable and clean database interaction
+* Structured backend for testability and modularity
+
+---
+
+##  AI Usage
+
+AI tools (ChatGPT) were used for:
+
+* Backend API design
+* Pagination and filtering logic
+* Debugging frontend/backend issues
+* Improving code structure
+
+All generated code was:
+
+* Reviewed manually
+* Tested for correctness
+* Adjusted for performance and reliability
+
+---
+
+##  Future Improvements
+
+* Add employee CRUD UI (create/update/delete)
+* Add charts dashboard for insights
+* Implement authentication and authorization
+* Deploy application (AWS / Vercel)
+
+---
+
+##  Notes
+
+* Backend must be running before frontend
+* If no data appears, ensure seed script is executed
+* Uses local SQLite database for simplicity
+
+---
+
+
+
+##  Repository
+
+GitHub: https://github.com/Anshuman026/salary-management
+
+---
